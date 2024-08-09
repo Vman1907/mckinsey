@@ -1,9 +1,5 @@
-// /src/controllers/questionController.ts
-
 import { Request, Response } from 'express';
 import Question from '../models/questionModel';
-
-// Create a new question
 export const createQuestion = async (req: Request, res: Response) => {
 	try {
 		const question = new Question(req.body);
@@ -18,7 +14,6 @@ export const createQuestion = async (req: Request, res: Response) => {
 	}
 };
 
-// Get all questions
 export const getQuestions = async (req: Request, res: Response) => {
 	try {
 		const questions = await Question.find();
@@ -32,7 +27,6 @@ export const getQuestions = async (req: Request, res: Response) => {
 	}
 };
 
-// Get a single question by ID
 export const getQuestionById = async (req: Request, res: Response) => {
 	try {
 		const question = await Question.findById(req.params.id);
@@ -49,7 +43,6 @@ export const getQuestionById = async (req: Request, res: Response) => {
 	}
 };
 
-// Update a question by ID
 export const updateQuestion = async (req: Request, res: Response) => {
 	try {
 		const question = await Question.findByIdAndUpdate(req.params.id, req.body, {
@@ -69,7 +62,6 @@ export const updateQuestion = async (req: Request, res: Response) => {
 	}
 };
 
-// Delete a question by ID
 export const deleteQuestion = async (req: Request, res: Response) => {
 	try {
 		const question = await Question.findByIdAndDelete(req.params.id);

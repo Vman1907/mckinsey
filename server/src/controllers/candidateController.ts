@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import Candidate from '../models/candidateModel';
 
-// Create a new candidate
 export const createCandidate = async (req: Request, res: Response) => {
 	try {
 		const candidate = new Candidate(req.body);
@@ -16,7 +15,6 @@ export const createCandidate = async (req: Request, res: Response) => {
 	}
 };
 
-// Get all candidates
 export const getCandidates = async (req: Request, res: Response) => {
 	try {
 		const candidates = await Candidate.find();
@@ -30,7 +28,6 @@ export const getCandidates = async (req: Request, res: Response) => {
 	}
 };
 
-// Get a single candidate by ID
 export const getCandidateById = async (req: Request, res: Response) => {
 	try {
 		const candidate = await Candidate.findById(req.params.id);
@@ -47,7 +44,6 @@ export const getCandidateById = async (req: Request, res: Response) => {
 	}
 };
 
-// Update a candidate by ID
 export const updateCandidate = async (req: Request, res: Response) => {
 	try {
 		const candidate = await Candidate.findByIdAndUpdate(req.params.id, req.body, {
@@ -67,7 +63,6 @@ export const updateCandidate = async (req: Request, res: Response) => {
 	}
 };
 
-// Delete a candidate by ID
 export const deleteCandidate = async (req: Request, res: Response) => {
 	try {
 		const candidate = await Candidate.findByIdAndDelete(req.params.id);
