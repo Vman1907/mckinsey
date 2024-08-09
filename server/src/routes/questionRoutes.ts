@@ -5,7 +5,7 @@ import roleMiddleware from '../middleware/roleMiddleware';
 
 const router = Router();
 
-router.post('/questions', protect, roleMiddleware('Admin'), createQuestion);
-router.get('/questions', protect, getQuestions);
+router.post('/create-question', protect, roleMiddleware('Admin'), createQuestion);
+router.get('/list-question', protect, getQuestions);
 
 export default router;
